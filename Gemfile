@@ -13,11 +13,4 @@ gemspec
 # To use a debugger
 gem 'byebug', group: [:development, :test]
 
-# twitter bootstrap css & javascript toolkit
-gem 'twitter-bootswatch-rails', '~> 3.3.2'
 
-# twitter bootstrap helpers gem, e.g., alerts etc...
-gem 'twitter-bootswatch-rails-helpers'
-
-#  to use Less.
- gem 'therubyracer'

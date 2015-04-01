@@ -11,3 +11,7 @@
 // about supported directives.
 //
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require amelia/loader
+//= require amelia/bootswatch
