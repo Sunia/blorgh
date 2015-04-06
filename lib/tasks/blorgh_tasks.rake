@@ -60,6 +60,7 @@ namespace :plugin do
   end
 
   task :install_migrations do
+    byebug
     Rake::Task["blorgh:install:migrations"].invoke
     puts "Plugin migrations are installed"
   end

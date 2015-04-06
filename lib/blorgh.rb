@@ -1,4 +1,4 @@
-# For initializing all the variables.
+# Initializer file of the plugin.
 
 require "blorgh/engine"
 
@@ -17,5 +17,4 @@ module Blorgh
   def self.setup
     yield self
   end
-
 end
