@@ -11,35 +11,21 @@ class BlorghGenerator < Rails::Generators::NamedBase
 
 <<-FILE
 
-module #{class_name}Helper
-  attr_reader :#{plural_name}, :#{plural_name.singularize}
+module BlorghHelper
 
   def #{plural_name.singularize}_signed_in?
     warden.authenticate?(scope: mapping)
   end
 
   def current_#{plural_name.singularize}
-    mappings.unshift mappings.delete(favourite.to_sym) if favourite
-    mappings.each do |mapping|
-      current = warden.authenticate(scope: mapping)
-      return current if current
-    end
-    nil
   end
 
   def authenticate_#{plural_name.singularize}
-    unless #{plural_name.singularize}_signed_in?
-      mappings.unshift mappings.delete(favourite.to_sym) if favourite
-      mappings.each do |mapping|
-        opts[:scope] = mapping
-        warden.authenticate!(opts) if !devise_controller? || opts.delete(:force)
-      end
-    end
   end
 
 end
-
 FILE
+
   end
 
 end
